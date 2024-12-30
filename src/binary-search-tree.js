@@ -36,9 +36,14 @@ class BinarySearchTree {
     }
   }
 
-  has(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  has(data) {
+    return searchWhithin(this.rootEl, data);
+
+    function searchWhithin(node, data) {
+      if (!node) return false;
+      if (node.data === data) return true;
+      return data < node.data ? searchWhithin(node.left, data) : searchWhithin(node.right, data);
+    }
   }
 
   find(/* data */) {
