@@ -24,13 +24,13 @@ class Queue {
   }
 
   enqueue(value) {
-    const newNode = new ListNode(value);
+    const node = new ListNode(value);
     if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
+      this.head = node;
+      this.tail = node;
     } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
+      this.tail.next = node;
+      this.tail = node;
     }
   }
 
